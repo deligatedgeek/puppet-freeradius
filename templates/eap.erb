@@ -327,7 +327,9 @@ eap {
 		#
 		#    openssl dhparam -out certs/dh 2048
 		#
+<%- if @tls_dh_file && @tls_dh_file != '' -%>
 		dh_file = <%= @tls_dh_file %>
+<%- end -%>
 
 		#  If your system doesn't have /dev/urandom,
 		#  you will need to create this file, and
