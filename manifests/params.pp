@@ -93,26 +93,10 @@ class freeradius::params {
     }
     'Debian': {
       $fr_basepath = $facts['os']['release']['major'] ? {
-        '9'          => '/etc/freeradius/3.0',
-        '10'         => '/etc/freeradius/3.0',
-        '11'         => '/etc/freeradius/3.0',
-        'buster/sid' => '/etc/freeradius/3.0',
-        '18.04'      => '/etc/freeradius/3.0',
-        '20.04'      => '/etc/freeradius/3.0',
-        '22.04'      => '/etc/freeradius/3.0',
-        '24.04'      => '/etc/freeradius/3.0',
-        default      => '/etc/freeradius',
+        default      => '/etc/freeradius/3.0',
       }
       $fr_raddbdir = $facts['os']['release']['major'] ? {
-        '9'          => "\${sysconfdir}/freeradius/3.0",
-        '10'         => "\${sysconfdir}/freeradius/3.0",
-        '11'         => "\${sysconfdir}/freeradius/3.0",
-        'buster/sid' => "\${sysconfdir}/freeradius/3.0",
-        '18.04'      => "\${sysconfdir}/freeradius/3.0",
-        '20.04'      => "\${sysconfdir}/freeradius/3.0",
-        '22.04'      => "\${sysconfdir}/freeradius/3.0",
-        '24.04'      => "\${sysconfdir}/freeradius/3.0",
-        default      => "\${sysconfdir}/freeradius",
+        default      => "\${sysconfdir}/freeradius/3.0",
       }
     }
     default: {
