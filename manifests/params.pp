@@ -191,4 +191,15 @@ class freeradius::params {
 
   # Default radsniff pid file location
   $fr_radsniff_pidfile = "/var/run/${fr_service}/radsniff.pid"
+
+  $manage_logrotate = $facts['os']['family'] ? {
+    'Debian' => false,
+    default  => true,
+  }
+
+  $logrotate_rulename = $facts['os']['family'] ? {
+    'Debian' => 'freeradius',
+    'RedHat' => 'radiusd',
+    default  => 'radiusd',
+  }
 }
